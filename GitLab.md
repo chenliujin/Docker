@@ -39,6 +39,13 @@ server {
         #}
 }
 ```
+## GitLab Nginx
+因为在container 里面有 proxy，端口占用的情况，在外面再设一次 proxy 会找出里面的 proxy 取不到域名，引起 url 连接错误。所以在里面一级的 proxy 写死 host
+```
+$ /var/opt/gitlab/nginx/conf/gitlab-http.conf
+#proxy_set_header Host $http_host;
+proxy_set_header Host 'www.example.com';
+```
 
 # GitLab 设置（修改数据库）
 ```
