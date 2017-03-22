@@ -28,15 +28,15 @@ docker run \
 docker.io/gitlab/gitlab-ce
 ```
 
-# Proxy
+# Nginx
 ```
 server {
         listen       80;
         server_name  www.example.com;
-        location / {
-                proxy_pass http://localhost:8088;             #被代理的服务器ip
-                proxy_set_header  X-Real-IP  $remote_addr;    #多了这行
-        }
+        #location / {
+        #        proxy_pass http://localhost:8088;             #被代理的服务器ip
+        #        proxy_set_header  X-Real-IP  $remote_addr;    #多了这行
+        #}
 }
 ```
 
