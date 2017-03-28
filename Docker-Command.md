@@ -69,3 +69,5 @@ $ docker export container > my_container.tar
 $ cat my_container.tar | docker import - imported:container
 ```
 docker import 会把打包的容器导入为一个镜像。
+
+- [docker Failed to get D-Bus connection 报错](http://welcomeweb.blog.51cto.com/10487763/1735251)
