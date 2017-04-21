@@ -3,7 +3,8 @@
 /var/lib/registry
 
 ```
-$ docker run -v /var/lib/registry:/var/lib/registry -d --restart=always -p 5000:5000 --name=registry registry:2.6.1
+$ docker run -v /var/lib/registry:/var/lib/registry -d --restart=always -p 5000:5000 \ 
+	--name=registry registry:2.6.1
 ```
 
 
@@ -18,4 +19,5 @@ INSECURE_REGISTRY='--insecure-registry x.x.x.x:5000'
 ```
 
 # 参考文献
+- [deploying](https://github.com/docker/docker.github.io/blob/master/registry/deploying.md)
 
