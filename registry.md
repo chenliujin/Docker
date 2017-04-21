@@ -1,6 +1,6 @@
 # registry 
 ```
-$ docker run -v /var/lib/registry:/var/lib/registry -d --restart=always -p 5000:5000 --name=registry registry
+$ docker run -v /var/lib/registry:/var/lib/registry -d --restart=always -p 5000:5000 --name=registry registry:2.6.1
 ```
 
 
