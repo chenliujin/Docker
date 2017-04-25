@@ -65,11 +65,6 @@ docker run -d --restart=always -p 5000:5000 \
 $ docker login registry.chenliujin.com:5000
 ```
 
-# k8s
-```
-kubectl create secret docker-registry registrykey-m2-1 --docker-server=registry.chenliujin.com:5000 --docker-username={UserName} --docker-password={Password} --docker-email=liujin.chen@qq.com
-```
-
 
 # 参考文献
 - [Deploying a registry server][https://docs.docker.com/registry/deploying/]
