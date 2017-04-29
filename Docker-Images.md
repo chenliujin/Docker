@@ -28,3 +28,8 @@ $ docker commit {ImageID} {namespace}/{ImageName}:{Version}
 ```
 $ docker build -t {Namespace}/{ImageName}:{Version}
 ```
+
+
+# docker build
+- -t
+- -f 
