@@ -1,5 +1,8 @@
 #!/bin/bash
 
+touch /var/log/redis/redis.log
+chmod a+w /var/log/redis/redis.log
+
 docker run -d \
 	-v /var/lib/redis:/data \
 	-v /var/log/redis:/var/log/redis \
