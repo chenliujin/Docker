@@ -8,7 +8,7 @@
 
 ```
 docker run -d --restart=always -p 5000:5000 \
-	-v /var/lib/registry:/var/lib/registry \
+	-v /data/registry:/var/lib/registry \
 	--name=registry \
 	registry:2.6.1
 ```
@@ -22,6 +22,14 @@ $ mkdir -p /data/docker/certs
 $ cd /data/docker/certs
 $ openssl genrsa -out registry.chenliujin.com.key 2048
 $ openssl req -newkey rsa:4096 -nodes -sha256 -keyout registry.chenliujin.com.key -x509 -days 365 -out registry.chenliujin.com.crt
+
+Country Name (2 letter code) [XX]:CN
+State or Province Name (full name) []:GD
+Locality Name (eg, city) [Default City]:SZ
+Organization Name (eg, company) [Default Company Ltd]:chenliujin
+Organizational Unit Name (eg, section) []:chenliujin
+Common Name (eg, your name or your servers hostname) []:registry.66park.net
+Email Address []:liujin.chen@qq.com
 
 # CentOS 7
 $ cat registry.chenliujin.com.crt >> /etc/pki/tls/certs/ca-bundle.crt 
@@ -47,8 +55,12 @@ $ docker run --entrypoint htpasswd registry:2.6.1 -Bbn testuser testpassword > /
 ```
 
 ```
-docker run -d --restart=always -p 5000:5000 \
-        -v /var/lib/registry:/var/lib/registry \
+docker run \
+        --name=registry \
+	-d \
+	--restart=always \
+	-p 5000:5000 \
+        -v /data/registry:/var/lib/registry \
         -v /data/docker/auth:/auth \
         -e "REGISTRY_AUTH=htpasswd" \
         -e "REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm" \
@@ -56,9 +68,7 @@ docker run -d --restart=always -p 5000:5000 \
         -v /data/docker/certs:/certs \
         -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/registry.chenliujin.com.crt \
         -e REGISTRY_HTTP_TLS_KEY=/certs/registry.chenliujin.com.key \
-        --name=registry \
         registry:2.6.1
-
 ```
 
 ```
