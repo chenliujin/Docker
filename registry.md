@@ -14,25 +14,25 @@ docker run -d --restart=always -p 5000:5000 \
 ```
 
 ## hosts
-x.x.x.x registry.chenliujin.com
+x.x.x.x registry.io
 
 ## Get a certificate
 ```
 $ mkdir -p /data/docker/certs
 $ cd /data/docker/certs
-$ openssl genrsa -out registry.chenliujin.com.key 2048
-$ openssl req -newkey rsa:4096 -nodes -sha256 -keyout registry.chenliujin.com.key -x509 -days 365 -out registry.chenliujin.com.crt
+$ openssl genrsa -out registry.io.key 2048
+$ openssl req -newkey rsa:4096 -nodes -sha256 -keyout registry.io.key -x509 -days 365 -out registry.io.crt
 
 Country Name (2 letter code) [XX]:CN
 State or Province Name (full name) []:GD
 Locality Name (eg, city) [Default City]:SZ
-Organization Name (eg, company) [Default Company Ltd]:chenliujin
-Organizational Unit Name (eg, section) []:chenliujin
-Common Name (eg, your name or your servers hostname) []:registry.66park.net
+Organization Name (eg, company) [Default Company Ltd]:CHENLIUJIN
+Organizational Unit Name (eg, section) []:CHENLIUJIN
+Common Name (eg, your name or your servers hostname) []:registry.io
 Email Address []:liujin.chen@qq.com
 
 # CentOS 7
-$ cat registry.chenliujin.com.crt >> /etc/pki/tls/certs/ca-bundle.crt 
+$ cat registry.io.crt >> /etc/pki/tls/certs/ca-bundle.crt 
 $ systemctl restart docker
 ```
 
