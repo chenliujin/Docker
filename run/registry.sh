@@ -1,5 +1,6 @@
 #!/bin/bash
 
+docker rm -f registry
 docker run \
         --name=registry \
 	-d \
