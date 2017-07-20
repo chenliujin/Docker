@@ -16,12 +16,12 @@ docker run -d --restart=always -p 5000:5000 \
 ## hosts
 x.x.x.x registry.io
 
-## Get a certificate
+## 生成证书 
 ```
 $ mkdir -p /data/docker/certs
 $ cd /data/docker/certs
-$ openssl genrsa -out registry.io.key 2048
-$ openssl req -newkey rsa:4096 -nodes -sha256 -keyout registry.io.key -x509 -days 365 -out registry.io.crt
+$ openssl genrsa -out registry.key 2048
+$ openssl req -newkey rsa:4096 -nodes -sha256 -keyout registry.key -x509 -days 365 -out registry.crt
 
 Country Name (2 letter code) [XX]:CN
 State or Province Name (full name) []:GD
@@ -32,7 +32,7 @@ Common Name (eg, your name or your servers hostname) []:registry.io
 Email Address []:liujin.chen@qq.com
 
 # CentOS 7
-$ cat registry.io.crt >> /etc/pki/tls/certs/ca-bundle.crt 
+$ cat registry.crt >> /etc/pki/tls/certs/ca-bundle.crt 
 $ systemctl restart docker
 ```
 
@@ -66,8 +66,8 @@ docker run \
         -e "REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm" \
         -e REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd \
         -v /data/docker/certs:/certs \
-        -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/registry.io.crt \
-        -e REGISTRY_HTTP_TLS_KEY=/certs/registry.io.key \
+        -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/registry.crt \
+        -e REGISTRY_HTTP_TLS_KEY=/certs/registry.key \
         registry:2.6.1
 ```
 
