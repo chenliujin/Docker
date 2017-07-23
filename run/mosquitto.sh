@@ -1,14 +1,14 @@
 #!/bin/bash
 
 
+	#-v /var/log/mosquitto:/mosquitto/log \
+	#-v /etc/mosquitto/mosquitto.conf:/etc/mosquitto/mosquitto.conf \
 docker rm -f mosquitto
 docker run \
 	-d \
 	--name mosquitto \
 	--restart=always \
-	-v /etc/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf \
-	-v /data/mosquitto:/mosquitto/data \
-	-v /var/log/mosquitto:/mosquitto/log \
-	-p 1883:1883 \
-	-p 9001:9001 \
-	eclipse-mosquitto:1.4.12
+	-v /data/mosquitto:/var/lib/mosquitto \
+	-p 2883:1883 \
+	-p 9883:9883 \
+	jllopis/mosquitto:v1.4.12
