@@ -2,8 +2,9 @@ FROM chenliujin/nginx
 
 MAINTAINER liujin.chen <liujin.chen@qq.com>
 
-RUN yum install -y http://rpms.famillecollet.com/enterprise/remi-release-7.rpm;
-RUN yum install -y --enablerepo=remi,remi-php56 php \
+RUN yum install -y http://rpms.famillecollet.com/enterprise/remi-release-7.rpm && \
+    yum install -y --enablerepo=remi,remi-php56 \
+	php \
 	php-fpm \
 	php-pdo \
 	php-mysqlnd \
@@ -12,15 +13,13 @@ RUN yum install -y --enablerepo=remi,remi-php56 php \
 	php-redis \
 	php-gearman \
 	php-pecl-apcu\
-	php-gd;
-RUN yum clean all;
+	php-gd && \
+    yum clean all
 
 RUN systemctl enable php-fpm
 
-COPY ./etc/php.ini 	/etc/php.ini
+COPY ./etc/php.ini /etc/php.ini
 
-VOLUME /var/log/php-fpm
-
-EXPOSE 80 443
+VOLUME ["/var/log/php-fpm"]
 
 CMD ["/usr/sbin/init"]
