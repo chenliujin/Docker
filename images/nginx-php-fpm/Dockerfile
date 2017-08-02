@@ -20,7 +20,7 @@ RUN yum install -y http://rpms.famillecollet.com/enterprise/remi-release-7.rpm &
 
 # 2. timezone & include_path
 RUN sed -i "s/;date\.timezone =/date\.timezone = Asia\/Shanghai/" /etc/php.ini && \
-    sed -i "s/;include_path = \"\.:/php/includes\"/include_path = \"\.:/php/includes:/usr/lib/php/pear:/data/conf\"/" /etc/php.ini
+    sed -i "s/;include_path = \"\.:\/php\/includes\"/include_path = \"\.:\/php\/includes:\/usr\/lib\/php\/pear:\/data\/conf\"/" /etc/php.ini
 
 RUN systemctl enable php-fpm
 
