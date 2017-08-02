@@ -2,8 +2,8 @@ FROM registry.chenliujin.com/nginx:1.12.1
 
 MAINTAINER liujin.chen <liujin.chen@qq.com>
 
-RUN yum update -y && \
-    yum install -y http://rpms.famillecollet.com/enterprise/remi-release-7.rpm && \
+# 1. version:5.6.31
+RUN yum install -y http://rpms.famillecollet.com/enterprise/remi-release-7.rpm && \
     yum install -y --enablerepo=remi,remi-php56 \
 	php \
 	php-fpm \
@@ -18,8 +18,9 @@ RUN yum update -y && \
     yum erase -y remi-release && \
     yum clean all
 
-RUN systemctl enable php-fpm
+# 2. timezone
+RUN sed -i "s/;date\.timezone =/date\.timezone = Asia\/Shanghai/" /etc/php.ini
 
-COPY ./etc/php.ini /etc/php.ini
+RUN systemctl enable php-fpm
 
 VOLUME ["/var/log/php-fpm"]
