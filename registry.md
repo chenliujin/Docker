@@ -77,7 +77,7 @@ $ docker login registry.io:5000
 
 # 参考文献
 - [Deploy a registry server][https://docs.docker.com/registry/deploying/]
-- https://eacdy.gitbooks.io/spring-cloud-book/content/3%20%E4%BD%BF%E7%94%A8Docker%E6%9E%84%E5%BB%BA%E5%BE%AE%E6%9C%8D%E5%8A%A1/3.5%20Docker%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E7%9A%84%E6%90%AD%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8.html
+- [Docker私有仓库的搭建与使用](https://eacdy.gitbooks.io/spring-cloud-book/content/3%20%E4%BD%BF%E7%94%A8Docker%E6%9E%84%E5%BB%BA%E5%BE%AE%E6%9C%8D%E5%8A%A1/3.5%20Docker%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E7%9A%84%E6%90%AD%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8.html)
 - [Docker Registry相关问题](http://mp.weixin.qq.com/s/-Mc2booTpmje7hHrtZKrlg)
 - [Kubernetes从Private Registry中拉取容器镜像的方法](http://tonybai.com/2016/11/16/how-to-pull-images-from-private-registry-on-kubernetes-cluster/?utm_source=rss)
 
