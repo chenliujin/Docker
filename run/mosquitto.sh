@@ -11,4 +11,4 @@ docker run \
 	-v /data/mosquitto:/var/lib/mosquitto \
 	-p 2883:1883 \
 	-p 9883:9883 \
-	jllopis/mosquitto:v1.4.12
+	jllopis/mosquitto:v1.4.14
