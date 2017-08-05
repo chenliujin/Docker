@@ -14,5 +14,5 @@ docker run \
         -v /data/docker/certs:/certs \
         -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/registry.crt \
         -e REGISTRY_HTTP_TLS_KEY=/certs/registry.key \
-        registry:2.6.1
+        registry:2.6.2
 
