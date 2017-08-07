@@ -29,5 +29,5 @@ docker run \
 
 
 # mysql > CREATE USER 'appuser'@'%' IDENTIFIED BY '123456';
-# mysql > GRANT SELECT,INSERT,UPDATE,DELETE,[CREATE,DROP] on mdc_bill.* to appuser@'%';
+# mysql > GRANT SELECT,INSERT,UPDATE,DELETE,[CREATE,DROP] on zencart.* to appuser@'%';
 # mysql > flush privileges;
