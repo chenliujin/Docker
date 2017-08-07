@@ -28,5 +28,6 @@ docker run \
 #+--------------------------+----------------------------+
 
 
-# mysql > grant SELECT,INSERT,UPDATE,DELETE,[CREATE,DROP] privileges on mdc_bill.* to appuser@'%' identified by 'ab63c97e5f3e7f6';
+# mysql > CREATE USER 'appuser'@'%' IDENTIFIED BY 'mdc@2017';
+# mysql > GRANT SELECT,INSERT,UPDATE,DELETE,[CREATE,DROP] on mdc_bill.* to appuser@'%';
 # mysql > flush privileges;
