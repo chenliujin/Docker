@@ -10,7 +10,9 @@ docker run \
 	mysql:5.7.18
 
 
-#
+# docker exec -it mysql cat /etc/mysql/mysql.conf.d/mysqld.cnf > /etc/mysql/mysql.conf.d/mysqld.cnf
+# echo character-set-server = utf8 >> /etc/mysql/mysql.conf.d/mysqld.cnf
+
 # mysql > show variables like "%char%";
 #+--------------------------+----------------------------+
 #| Variable_name            | Value                      |
