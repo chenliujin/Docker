@@ -1,6 +1,6 @@
 #!/bin/bash
 
 docker run \
-	-d
+	-d \
 	--name=centos \
 	centos:latest
