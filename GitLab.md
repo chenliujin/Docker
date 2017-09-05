@@ -28,6 +28,9 @@ docker run \
 docker.io/gitlab/gitlab-ce
 ```
 
+# Version
+- 8.15.2 
+
 # Nginx
 ```
 server {
