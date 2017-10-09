@@ -14,7 +14,7 @@ RUN yum install -y http://rpms.famillecollet.com/enterprise/remi-release-7.rpm &
 	php-redis \
 	php-gearman \
 	php-pecl-apcu\
-	php-pecl-solr \
+	php-pecl-solr2 \
 	php-gd && \
     yum erase -y remi-release && \
     yum clean all
