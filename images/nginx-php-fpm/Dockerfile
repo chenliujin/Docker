@@ -1,4 +1,4 @@
-FROM registry.chenliujin.com/nginx:1.12.1 
+FROM registry.chenliujin.com/nginx:1.12.2 
 
 MAINTAINER liujin.chen <liujin.chen@qq.com>
 
