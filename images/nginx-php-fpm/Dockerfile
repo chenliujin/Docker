@@ -1,4 +1,4 @@
-FROM registry.iot-sw.net:5000/nginx:1.12.2 
+FROM docker.io/nginx:1.12.2 
 
 MAINTAINER liujin.chen <liujin.chen@qq.com>
 
