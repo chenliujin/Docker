@@ -30,8 +30,10 @@ Organization Name (eg, company) [Default Company Ltd]:CHENLIUJIN
 Organizational Unit Name (eg, section) []:CHENLIUJIN
 Common Name (eg, your name or your servers hostname) []:registry.io
 Email Address []:liujin.chen@qq.com
+```
 
 # CentOS 7
+```
 $ cat registry.crt >> /etc/pki/tls/certs/ca-bundle.crt 
 $ systemctl restart docker
 ```
