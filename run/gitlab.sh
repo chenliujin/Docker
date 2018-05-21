@@ -7,6 +7,7 @@ docker run \
   -d \
   --restart=always \
   --name=gitlab \
+  -e 'GITLAB_SSH_PORT=10022' \
   -v /etc/gitlab:/etc/gitlab \
   -v /var/log/gitlab:/var/log/gitlab \
   -v /var/opt/gitlab:/var/opt/gitlab \
