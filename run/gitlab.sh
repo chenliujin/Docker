@@ -10,4 +10,4 @@ docker run \
   -v /etc/gitlab:/etc/gitlab \
   -v /var/log/gitlab:/var/log/gitlab \
   -v /var/opt/gitlab:/var/opt/gitlab \
-  docker.io/gitlab/gitlab-ce
+  docker.io/gitlab/gitlab-ce:8.17.4
