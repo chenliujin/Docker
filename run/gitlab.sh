@@ -9,6 +9,5 @@ docker run \
   --name=gitlab \
   -e 'GITLAB_SSH_PORT=10022' \
   -v /etc/gitlab:/etc/gitlab \
-  -v /var/log/gitlab:/var/log/gitlab \
   -v /var/opt/gitlab:/var/opt/gitlab \
   docker.io/gitlab/gitlab-ce:9.5.6-ce.0
