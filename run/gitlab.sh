@@ -10,4 +10,4 @@ docker run \
   -e 'GITLAB_SSH_PORT=10022' \
   -v /etc/gitlab:/etc/gitlab \
   -v /var/opt/gitlab:/var/opt/gitlab \
-  gitlab/gitlab-ce:gitlab/gitlab-ce
+  gitlab/gitlab-ce:10.7.1-ce.0
