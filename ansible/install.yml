@@ -2,10 +2,10 @@
 - hosts: docker
   tasks:
     - name: 证书路径
-      shell: mkdir -p /etc/docker/certs.d/registry 
+      shell: mkdir -p /etc/docker/certs.d/registry.chenliujin.com:5000
 
     - name: 证书信任
-      copy: src=./etc/docker/certs.d/registry/registry.crt dest=/etc/docker/certs.d/registry/
+      copy: src=./etc/docker/certs.d/registry.chenliujin.com:5000/registry.crt dest=/etc/docker/certs.d/registry.chenliujin.com:5000/
 
     - name: restart docker
       shell: systemctl restart docker
