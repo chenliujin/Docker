@@ -1,0 +1,11 @@
+
+- hosts: docker
+  tasks:
+    - name: 证书路径
+      shell: mkdir -p /etc/docker/certs.d/registry 
+
+    - name: 证书信任
+      copy: src=./etc/docker/certs.d/registry/registry.crt dest=/etc/docker/certs.d/registry/
+
+    - name: restart docker
+      shell: systemctl restart docker
