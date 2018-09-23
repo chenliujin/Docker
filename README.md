@@ -9,6 +9,14 @@
 }
 ```
 
+# 修改工作路径
+
+```
+# vim /etc/systemd/system/multi-user.target.wants/docker.service 
+ExecStart=/usr/bin/dockerd-current \
+          --graph /data/docker \
+```
+
 # 命令
 - docker info
 
