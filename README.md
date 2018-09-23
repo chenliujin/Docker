@@ -1,9 +1,11 @@
 # 配置
 
+DNS 不要安装到容器里面，如果不是 docker 默认的网段，docker 将不能使用，而且重启后 IP 还经常变。
+
 ```
 # vim /etc/docker/daemon.json
 {
-  "dns": ["192.168.100.2"],
+  "dns": ["192.168.0.2", "114.114.114.114", "8.8.8.8"],
   "live-restore": false,
   "registry-mirrors":["https://2if4o8ar.mirror.aliyuncs.com"]
 }
